@@ -1,0 +1,40 @@
+{% extends "base_page.html" %}
+
+{% block pagetitle %}
+Уроки
+{% endblock %}
+
+{% block page-title %}
+Список пройденных уроков
+{% endblock %}
+
+{% block page-lead %}
+Посмотрите на пройденные уроки:
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="section">
+        <table class="striped">
+        <thead>
+          <tr>
+              <th>хзч о</th>
+              <th>Дата урока</th>
+              <th>Тема урока</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        {% for cnt, date, topic in lessons %}
+          <tr>
+            <td>{{cnt}}</td>
+            <td>{{date}}</td>
+            <td>{{topic}}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+        <br></br>
+    </div>
+</div>
+{% endblock %}

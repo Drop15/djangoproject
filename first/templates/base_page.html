@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <title>{% block pagetitle %}{% endblock %}</title>
+    <!-- load static -->
+    {% load static %}
+    <!-- CSS -->
+    <link href="{% static 'materialize.min.css' %}" rel="stylesheet">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="{% static 'favicon.ico' %}" />
+</head>
+<body>
+    <header>
+      <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="/" class="brand-logo">
+                <img src="{% static 'favicon.ico' %}" alt="текст" width="32" height="32"/>
+                <span>текст</span>
+            </a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/lessons">Уроки</a></li>
+            <li><a href="/words">Слова</a></li>
+          </ul>
+
+          <ul id="nav-mobile" class="sidenav">
+            <li><a href="#">Navbar Link</a></li>
+          </ul>
+          <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+      </nav>
+
+      <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+          <br><br>
+          <h1 class="header center orange-text">{% block page-title %}{% endblock %}</h1>
+          <div class="row center">
+            <h5 class="header col s12 light">{% block page-lead %}{% endblock %}</h5>
+          </div>
+          <div class="row center">
+            <a href="#" id="download-button" class="btn-large waves-effect waves-light orange">кнопка</a>
+          </div>
+          <br><br>
+        </div>
+      </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="page-footer orange" style="position:fixed;bottom:0;left:0;width:100%;">
+      <div class="container">2023</div>
+    </footer>
+</body>
+</html>

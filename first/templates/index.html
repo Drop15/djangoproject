@@ -1,0 +1,51 @@
+{% extends "base_page.html" %}
+
+{% block pagetitle %}
+Текст
+{% endblock %}
+
+{% block page-title %}
+Изучение иностранных языков
+{% endblock %}
+
+{% block page-lead %}
+Страница проекта, позволяющего отслеживать информацию о пройденных уроках и изученных словах
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">Уроки</i></h2>
+            <h5 class="center">Информация о пройденных уроках</h5>
+            <a href="/lessons" id="download-button" class="btn-large waves-effect waves-light orange">К списку уроков</a>
+            <a href="#" id="download-button" class="btn-large waves-effect waves-light orange">Добавить урок</a>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">Слова</i></h2>
+            <h5 class="center">Список изученных слов</h5>
+            <a href="/words" id="download-button" class="btn-large waves-effect waves-light orange">К списку слов</a>
+            <a href="#" id="download-button" class="btn-large waves-effect waves-light orange">Добавить слово</a>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">текст</i></h2>
+            <h5 class="center"> текст</h5>
+            <p class="light">текст</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+  </div>
+{% endblock %}
