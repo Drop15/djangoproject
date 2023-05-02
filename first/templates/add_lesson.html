@@ -1,0 +1,36 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Добавить новый урок
+{% endblock %}
+
+{% block page-lead %}
+Когда вы нажмёте на кнопку &laquo;Отправить&raquo;, веб-приложению отправится POST-запрос.
+При этом в полях <span class="fst-italic">Имя</span> и <span class="fst-italic">Email</span> есть атрибут
+<code>value required</code>, который подсказывает пользователю о необходимости заполнения — это свойство Bootstrap.
+{% endblock %}
+
+
+{% block content %}
+<div class="container-sm px-5 py-5" id="lesson-form">
+    <form method="post">
+        <div class="row px-5 py-2">
+            <h3>Укажите дату и тему урока</h3>
+        </div>
+        <div class="row px-5 py-2">
+            <div class="col-md-4">
+                <label for="lesson_date">Дата</label>
+                <input type="date" class="form-control input-lg" name="lesson_date" id="lesson_date">
+            </div>
+            <div class="col-md-8">
+                <label for="topic">Тема</label>
+                <textarea type="text" class="form-control input-lg" name="topic" id="topic" aria-describedby="definition_note" rows="3"></textarea>
+            </div>
+        </div>
+        <div class="row px-5 py-2">
+            <button type="submit" class="btn btn-primary" formaction="/send-lesson">Отправить</button>
+        </div>
+    </form>
+    <br>
+</div>
+{% endblock %}
