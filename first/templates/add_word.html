@@ -4,33 +4,34 @@
 Добавить термин
 {% endblock %}
 
-{% block page-lead %}
-Когда вы нажмёте на кнопку &laquo;Отправить&raquo;, веб-приложению отправится POST-запрос.
-При этом в полях <span class="fst-italic">Имя</span> и <span class="fst-italic">Email</span> есть атрибут
-<code>value required</code>, который подсказывает пользователю о необходимости заполнения — это свойство Bootstrap.
-{% endblock %}
-
-
 {% block content %}
 <div class="container-sm px-5 py-5" id="word-form">
-    <form method="post">
-        <div class="row px-5 py-2">
-            <h3>Добавьте слово и его перевод</h3>
-        </div>
-        <div class="row px-5 py-2">
-            <div class="col-md-4">
-                <label for="word">Слово</label>
-                <input type="text" class="form-control input-lg" name="word" id="word">
-            </div>
-            <div class="col-md-8">
-                <label for="translation">Перевод</label>
-                <textarea type="text" class="form-control input-lg" name="translation" id="translation" aria-describedby="definition_note" rows="3"></textarea>
+    <div class="container">
+    <form method="post" class="col s12">
+        <div class="row">
+            <div class="col s12">
+                <h3>Добавьте слово и его перевод</h3>
             </div>
         </div>
-        <div class="row px-5 py-2">
-            <button type="submit" class="btn btn-primary" formaction="/send-word">Отправить</button>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="word" type="text" class="form-control input-lg" name="word" required>
+                <label class="active" for="word">Слово</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="translation" type="text" class="validate" name="translation" required>
+                <label class="active" for="translation">Перевод</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s6">
+                <button type="submit" class="btn btn-primary" formaction="/send-word">Отправить</button>
+            </div>
         </div>
     </form>
     <br>
+    </div>
 </div>
 {% endblock %}

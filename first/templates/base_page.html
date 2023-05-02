@@ -16,7 +16,7 @@
         <div class="nav-wrapper container">
             <a id="logo-container" href="/" class="brand-logo">
                 <img src="{% static 'favicon.ico' %}" alt="текст" width="32" height="32"/>
-                <span>текст</span>
+                <span>My project</span>
             </a>
           <ul class="right hide-on-med-and-down">
             <li><a href="/lessons">Уроки</a></li>
@@ -37,9 +37,7 @@
           <div class="row center">
             <h5 class="header col s12 light">{% block page-lead %}{% endblock %}</h5>
           </div>
-          <div class="row center">
-            <a href="#" id="download-button" class="btn-large waves-effect waves-light orange">кнопка</a>
-          </div>
+          {% block centralbtn %}{% endblock %}
           <br><br>
         </div>
       </div>

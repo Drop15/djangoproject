@@ -54,6 +54,7 @@ def send_lesson(request):
             context["success"] = True
             context["comment"] = "Урок добавлен!"
             db_pr.db_write_lesson(lesson_date, topic)
+
         if context["success"]:
             context["success-title"] = ""
         return render(request, "lesson_added.html", context)
